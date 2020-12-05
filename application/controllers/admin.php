@@ -9,7 +9,7 @@ class Admin extends CI_Controller{
 			redirect(base_url("login"));
 		}
 	}
-
+	//coba
 	function index(){
 		$this->load->helper('url');
 		$this->load->model('m_user');
