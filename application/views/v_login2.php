@@ -36,11 +36,11 @@
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="username" data-icon="u" > Your NIM </label>
-                                    <input id="NIM" name="NIM" required="required" type="text" placeholder="Masukkan NIM"/>
+                                    <input id="nim" name="nim" required="required" type="text" placeholder="Masukkan NIM"/>
                                 </p>
                                 <p> 
                                     <label for="password" class="password" data-icon="p"> Your password </label>
-                                    <input id="Password" name="assword" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <input id="Password" name="Password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
                                 <p class="login button"> 
                                     <input type="submit" value="Login" /> 

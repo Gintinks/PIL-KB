@@ -4,20 +4,17 @@ class M_login extends CI_Model{
 	function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
 	}
-	function signup($username, $namaLengkap, $password, $saldo, $email){
-		$this->load->database();
-		$joinDate =  date("Y/m/d"); 
+	function signup($Nama, $NIM, $email, $Password){
+		$this->load->database(); 
 		
 		$data = array(
-			'username' => $username,
-			'namaLengkap' => $namaLengkap,
-			'password' => $password,
-			'saldo' => $saldo,
+			'nama' => $Nama,
+			'NIM' => $NIM,
 			'email' => $email,
-			'jointDate' => $joinDate, 
-			'pemasukan_terakhir' => 0, 
-			'pengeluaran_terakhir' => 0
+			'Password' => $Password,
+			'sudah_milih' => 0,
+			'ID_ketua' => null
 		);
-		$this->db->insert('user', $data);
+		$this->db->insert('mahasiswa', $data);
 	}	
 }

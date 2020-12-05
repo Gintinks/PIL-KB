@@ -13,17 +13,17 @@ class Login extends CI_Controller{
 	}
 
 	function aksi_login(){
-		$Nama = $this->input->post('username');
-		$Password = $this->input->post('password');
+		$nim = $this->input->post('nim');
+		$Password = $this->input->post('Password');
 		$where = array(
-			'username' => $Nama,
-			'password' => $Password
+			'NIM' => $nim,
+			'Password' => $Password
 			);
-		$cek = $this->m_login->cek_login("user",$where)->num_rows();
+		$cek = $this->m_login->cek_login("mahasiswa",$where)->num_rows();
 		if($cek > 0){
 
 			$data_session = array(
-				'nama' => $Nama,
+				'NIM' => $nim,
 				'status' => "login"
 				);
 
@@ -44,10 +44,10 @@ class Login extends CI_Controller{
 	function signup(){
 		$this->load->helper('url');
 		$this->load->model('m_login');
-		$Nama = $this->input->post('Nama');
-		$Password = $this->input->post('Password');
-		$email = $this->input->post('Email');
-		$NIM = $this->input->post('NIM');
+		$Nama = $this->input->post('nama');
+		$Password = $this->input->post('password');
+		$email = $this->input->post('email');
+		$NIM = $this->input->post('nim');
 		$this->m_login->signup($Nama, $NIM, $email, $Password);
 		echo "sukses";
 		redirect(base_url('login'));
