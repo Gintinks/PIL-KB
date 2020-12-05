@@ -11,14 +11,6 @@ class M_Calon extends CI_Model{
         return $query->result();
     }
 
-    public function telah_memilih($nim, $pilihan){
-        $this->load->database();
-        $posts = $this->m_mahasiswa->get_data_mahasiswa($nim);
-        foreach ($posts as $post):
-            $ID_ketua = $post->$pilihan;
-        endforeach;
-        $this->db->query("UPDATE mahasiswa SET ID_ketua = '$ID_ketua' WHERE NIM = '$nim'");
-    }
     public function addVote($ID_ketua){
         $this->load->database();
         $posts = $this->m_calon->get_data_calon($ID_ketua);
