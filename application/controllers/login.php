@@ -12,6 +12,8 @@ class Login extends CI_Controller{
 		$this->load->view('v_login2');
 	}
 
+
+
 	function aksi_login(){
 		$nim = $this->input->post('nim');
 		$Password = $this->input->post('Password');
