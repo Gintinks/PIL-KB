@@ -15,9 +15,11 @@
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/style3.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate-custom.css" />
+        
     </head>
     <body>
+        
         <div class="container">
             <!-- Codrops top bar -->
            
@@ -65,7 +67,7 @@
                                 </p>
                                 <p> 
                                     <label for="email" class="email" data-icon="e">Email </label>
-                                    <input id="Email" name="email" required="required" type="email" placeholder="Email"/>
+                                    <input id="Email" name="email" pattern="^[a-zA-Z0-9]+@student\.ub.ac.id$" required type="email" placeholder="Email"/>
                                 </p>
                             
                                 <p> 
