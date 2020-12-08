@@ -18,4 +18,10 @@ class MainAdmin extends CI_Controller{
 		$this->load->view('home_admin', $data);
 
 	}
+	function tambah_calon(){
+
+	}
+	function atur_waktu(){
+		
+	}
 }
