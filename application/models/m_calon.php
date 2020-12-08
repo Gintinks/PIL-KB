@@ -19,5 +19,20 @@ class M_Calon extends CI_Model{
         endforeach;
         $this->db->query("UPDATE calon_ketua SET jumlah_pemilih = '$jumlah_pemilih' WHERE ID_ketua = '$ID_ketua'");
     }
+    public function tambah_calon($nama, $tempat, $tanggal, $deskripsi, $jenis_kelamin, $daftar_prestasi, $foto){
+        $this->load->database();
+        $data = array(
+			'nama' => $nama,
+            'tempat' => $tempat,
+            'tanggal' => $tanggal,
+            'deskripsi' => $deskripsi,
+            'jenis_kelamin' => $jenis_kelamin,
+            'daftar_prestasi' => $daftar_prestasi,
+            'foto' => $foto,
+            'jumlah_pemilih' => 0
+            
+		);
+		$this->db->insert('calon_ketua', $data);
+    }
    
 }
