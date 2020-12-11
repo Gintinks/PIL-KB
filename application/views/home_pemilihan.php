@@ -44,6 +44,7 @@
 
 
 					</div>
+
 				</nav>
 				<div class="jumbotron card card-block">
 					<div class="conatiner" style="padding:50px;" id="aboutTab">
@@ -65,7 +66,7 @@
 								<p><em>Melakukan Pemilihan Langsung Secara Online Tanpa Repot</em></p>
 
 							</div>
-							
+
 							<div class="col-sm-4 text-center">
 
 								<img src="assets2\images\icons\Stats.png" width="100" height="100" alt="" />
@@ -81,11 +82,50 @@
 
 					</div>
 				</div>
+
+
+				<div class="row" style="border: 5px solid #999;">
+					<div class="col-sm-12 text-center">
+						<div class="page-header" style="padding-top:30px;padding-bottom:30px;">
+
+							<br>
+							<h1 class="specialHead">Waktu Pemilihan Akan Dibuka pada</h1>
+							<p style="font-size:16px;">10:00:00 AM Friday, December 13, 2020</p>
+							<p><strong>Current Time : <span id="time"></span>
+									<span id="day"></span></strong></p>
+
+							<br>
+							<a href="#" class="btn btn-info"> <strong>Ayo Pilih</strong></a>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					function time() {
+						var date = new Date();
+						var time = date.toLocaleTimeString();
+						var options = {
+							weekday: 'long',
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
+						};
+						var day = date.toLocaleDateString('en-US', options);
+						document.getElementById('time').innerHTML = time;
+						document.getElementById('day').innerHTML = day;
+					}
+					setInterval(function() {
+						time();
+					}, 1000);
+				</script>
+				<div class="row" style="padding-top:50px;">
+					
+				</div>
 				<div class="row">
 					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 					max-width: 300px;
-		margin: auto;
-		text-align: center;">
+					margin: auto;
+					text-align: center;">
 						<img src="2b Shrug.jpg" alt="John" style="width:100%">
 						<h1>John Doe</h1>
 						<p class="titlecard">
@@ -94,12 +134,7 @@
 							TTL</p>
 						<p class="titlecard">
 							Jenis klamin</p>
-						<!-- <p>Harvard University</p>		
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-		<a href="#"><i class="fa fa-twitter"></i></a>
-	<a href="#"><i class="fa fa-linkedin"></i></a
-					<a href="#"><i class="fa fa-facebook"></i></a>
-	<p><button>Contact</button></p> -->
+
 						<div id="accordion">
 							<div class="card">
 								<div class="card-header" id="headingOne">
@@ -136,9 +171,9 @@
 						</div>
 					</div>
 					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		max-width: 300px;
-		margin: auto;
-		text-align: center;">
+					max-width: 300px;
+					margin: auto;
+					text-align: center;">
 						<img src="Mylife.png" alt="John" style="width:100%">
 						<h1>Lyle Walt</h1>
 						<p class="titlecard">
@@ -147,12 +182,7 @@
 							TTL</p>
 						<p class="titlecard">
 							Jenis klamin</p>
-						<!-- <p>Harvard University</p>
-			<a href="#"><i class="fa fa-dribbble"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<p><button>Contact</button></p> -->
+
 						<div id="accordion">
 							<div class="card">
 								<div class="card-header" id="headingOne">
@@ -189,9 +219,9 @@
 						</div>
 					</div>
 					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		max-width: 300px;
-		margin: auto;
-		text-align: center;">
+						max-width: 300px;
+						margin: auto;
+						text-align: center;">
 						<img src="happywolf.png" alt="John" style="width:100%">
 						<h1>Lawrence</h1>
 						<p class="titlecard">
@@ -200,12 +230,6 @@
 							TTL</p>
 						<p class="titlecard">
 							Jenis klamin</p>
-						<!-- <p>Harvard University</p>
-			<a href="#"><i class="fa fa-dribbble"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<p><button>Contact</button></p> -->
 						<div id="accordion">
 							<div class="card">
 								<div class="card-header" id="headingOne">
