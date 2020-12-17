@@ -14,11 +14,14 @@ class MainAdmin extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->model('m_admin');
 		$this->load->model('m_calon');
-		$posts2 = $this->m_calon->get_data_calon();
+	//	$posts2 = $this->m_calon->get_data_calon();
 		$posts = $this->m_admin->get_data_admin($this->session->userdata('username'));
 		$data['posts'] = $posts;
-		$data['posts2'] = $posts2;
+	//	$data['posts2'] = $posts2;
 		$this->load->view('home_admin', $data);
+	}
 
+	function tambah_calon(){
+		$this->load->view('tambah_calon');
 	}
 }
