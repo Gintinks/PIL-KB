@@ -24,4 +24,17 @@ class MainAdmin extends CI_Controller{
 	function tambah_calon(){
 		$this->load->view('tambah_calon');
 	}
+	function simpan_calon(){
+		$this->load->helper('url');
+		$this->load->model('m_calon');
+		$nama = $this->input->post('nama');
+		$tempat = $this->input->post('tempat');
+		$tanggal = $this->input->post('tanggal');
+		$deskripsi = $this->input->post('deskripsi');
+		$gender = $this->input->post('gender');
+		$daftar_prestasi = $this->input->post('daftar_prestasi');
+		$foto = $this->input->post('customFileInput');
+		$this->m_calon->tambah_calon($nama, $tempat, $tanggal, $deskripsi, $gender, $daftar_prestasi, $foto);
+		redirect(base_url("MainAdmin"));
+	}
 }

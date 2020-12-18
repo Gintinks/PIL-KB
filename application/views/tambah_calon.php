@@ -62,7 +62,7 @@
                             <h2>Data Calon Ketua BEM</h2>
                         </div>
                         <p>Silahkan isi setiap data di bawah ini.</p>
-                        <form action="createUser.php" method="post">
+                        <form action=<?php echo base_url("Mainadmin/simpan_calon"); ?> method="post">
 
                             <div class="form-group">
                                 <label>Nama</label>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" id="deskripsi"></textarea>
+                                <textarea class="form-control" rows="5" name="deskripsi" id="deskripsi"></textarea>
                             </div>
 
                             <div class="form-group">
@@ -91,14 +91,14 @@
 
                             <div class="form-group">
                                 <label>Daftar Prestasi</label>
-                                <textarea class="form-control" rows="5" id="daftar_prestasi"></textarea>
+                                <textarea class="form-control" rows="5" name="daftar_prestasi" id="daftar_prestasi"></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label>Foto</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput">
-                                    <label class="custom-file-label" for="customFileInput">Select file</label>
+                                <div class="custom-file" name="customFileInput">
+                                    <input type="file" class="custom-file-input"   name="customFileInput" id="customFileInput" aria-describedby="customFileInput">
+                                    <label class="custom-file-label" name="customFileInput" for="customFileInput">Select file</label>
                                 </div>
                                 
                             </div>

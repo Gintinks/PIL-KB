@@ -21,6 +21,11 @@ class M_Calon extends CI_Model{
     }
     public function tambah_calon($nama, $tempat, $tanggal, $deskripsi, $jenis_kelamin, $daftar_prestasi, $foto){
         $this->load->database();
+        if($jenis_kelamin=="Laki-laki"){
+            $jenis_kelamin = 'L';
+        } else{
+            $jenis_kelamin = 'P';
+        }
         $data = array(
 			'nama' => $nama,
             'tempat' => $tempat,
@@ -30,7 +35,6 @@ class M_Calon extends CI_Model{
             'daftar_prestasi' => $daftar_prestasi,
             'foto' => $foto,
             'jumlah_pemilih' => 0
-            
 		);
 		$this->db->insert('calon_ketua', $data);
     }
