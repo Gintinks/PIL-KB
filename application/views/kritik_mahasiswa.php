@@ -13,12 +13,7 @@
             margin: 0 auto;
         }
     </style>
-    <style>
-        body {
-            padding-top: 0px;
 
-        }
-    </style>
 
 </head>
 
@@ -59,67 +54,32 @@
                 <div class="row" style="border-radius: 15px; padding-bottom: 10px; background-color: #4DE1FF;">
                     <div class="col-md-12" style="padding-top:20px;">
                         <div class="page-header">
-                            <h2>Data Calon Ketua BEM</h2>
+                            <h2>Kritik</h2>
                         </div>
-                        <p>Silahkan isi setiap data di bawah ini.</p>
-                        <form action=<?php echo base_url("Mainadmin/simpan_calon"); ?> method="post">
+                        
+                        <form action=<?php echo base_url("kritik/simpan_kritik"); ?> method="post">
 
+                        
+                            
                             <div class="form-group">
-                                <label>Nama</label>
-                                <input type="text" name="nama" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Tempat Lahir</label>
-                                <input type="text" name="tempat" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Tanggal Lahir</label>
-                                <input class="form-control" type="date" name="tanggal" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" name="deskripsi" id="deskripsi"></textarea>
+                                <label>Tuliskan Kritik Anda</label>
+                                <textarea class="form-control" rows="5" name="isi_kritik" id="isi_kritik"></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label>Pilih jenis kelamin</label>
-                                <select class="form-control" name="gender">
-                                    <option>Laki-laki</option>
-                                    <option>Aerempuan</option>
-                                </select>
-                            </div>
+                            
 
-                            <div class="form-group">
-                                <label>Daftar Prestasi</label>
-                                <textarea class="form-control" rows="5" name="daftar_prestasi" id="daftar_prestasi"></textarea>
-                            </div>
+                           
 
-                            <div class="form-group">
-                                <label>Foto</label>
-                                <div class="custom-file" name="customFileInput">
-                                    <input type="file" class="custom-file-input"   name="customFileInput" id="customFileInput" aria-describedby="customFileInput">
-                                    <label class="custom-file-label" name="customFileInput" for="customFileInput">Select file</label>
-                                </div>
-                                
-                            </div>
-
-                            <input type="submit" class="btn btn-primary" name="submit" value="Tambahkan">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Kirim Kritik">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row" style="padding-top:50px;"></div>
+        <div class="row" style="padding-top:300px;"></div>
     </div>
 
 </body>
-<script>
-  document.querySelector('.custom-file-input').addEventListener('change', function (e) {
-    var name = document.getElementById("customFileInput").files[0].name;
-    var nextSibling = e.target.nextElementSibling
-    nextSibling.innerText = name
-  })
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>

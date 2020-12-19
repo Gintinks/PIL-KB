@@ -25,7 +25,7 @@ class Kritik extends CI_Controller{
         $this->load->model('m_kritik');
         $isi_kritik = $this->input->post('isi_kritik');
 		$this->m_kritik->simpan_kritik($isi_kritik);
-		redirect(base_url('login'));
+		redirect(base_url('main'));
 		
     }
 }
