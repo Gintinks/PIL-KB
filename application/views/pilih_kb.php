@@ -57,21 +57,20 @@
                         <br>
                         <h1 class="specialHead" style="color:black">Pilih Calon Ketua Yang Ingin Anda Pilih</h1>
                         <div class="col-sm-12" style="border: 1px solid;">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Lawrence
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Holo
-                                </label>
-                            </div>
+                            <?php $i = 1 ?>
+                            <?php foreach ($posts2 as $post) : ?>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios<?php echo $i; ?>" value="option<?php echo $i; ?>" checked style="transform: scale(1.5);margin-top: 25px;">
+                                    <label class="form-check-label" for="exampleRadios<?php echo $i; ?>" style="font-size: 40px">
+                                        <?php echo $post->nama; ?>
+                                    </label>
+                                </div>
+
+                            <?php
+                                $i++;
+                            endforeach;
+                            ?>
                         </div>
-
-
                         <br>
                         <a href="#" class="btn btn-info"> <strong>Pilih Ketua</strong></a>
                     </form>
