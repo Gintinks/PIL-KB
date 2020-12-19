@@ -22,7 +22,8 @@ class Login extends CI_Controller
 		$Password = $this->input->post('Password');
 		$where = array(
 			'NIM' => $nim,
-			'Password' => $Password
+			'Password' => $Password,
+			'verified' => 1
 		);
 		$cek = $this->m_login->cek_login("mahasiswa", $where)->num_rows();
 		if ($cek > 0) {
