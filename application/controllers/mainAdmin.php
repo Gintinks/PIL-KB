@@ -37,6 +37,13 @@ class MainAdmin extends CI_Controller{
 		$daftar_prestasi = $this->input->post('daftar_prestasi');
 		$foto = $this->input->post('customFileInput');
 		$this->m_calon->tambah_calon($nama, $tempat, $tanggal, $deskripsi, $gender, $daftar_prestasi, $foto);
-		redirect(base_url("MainAdmin"));
+		redirect(base_url("mainAdmin"));
+	}
+	function delete($ID_ketua){
+		$this->load->model('m_calon');
+
+		
+        $this->m_calon->delete($ID_ketua);
+        redirect(base_url('mainAdmin'));
 	}
 }

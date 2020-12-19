@@ -40,5 +40,9 @@ class M_Calon extends CI_Model{
 		);
 		$this->db->insert('calon_ketua', $data);
     }
+    function delete($ID_ketua){
+        $this->load->database();
+        $this->db->delete('calon_ketua', array('ID_ketua' => $ID_ketua));
+    }
    
 }
