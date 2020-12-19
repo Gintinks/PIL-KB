@@ -72,7 +72,7 @@
                             ?>
                         </div>
                         <br>
-                        <a href="main" class="btn btn-info"type="submit" name="submit"> <strong>Pilih Ketua</strong></a>
+                        <a href="vote" class="btn btn-info"type="submit" name="submit"> <strong>Pilih Ketua</strong></a>
                     </form>
                 </div>
                 <?php
