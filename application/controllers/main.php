@@ -39,4 +39,13 @@ class Main extends CI_Controller{
 		$data['posts2'] = $posts2;
 		$this->load->view('pilih_kb',$data);
 	}
+	function vote(){
+		$this->load->helper('url');
+		$this->load->model('m_mahasiswa');
+		$this->load->model('m_calon');
+		$nim = $this->session->userdata('NIM');
+		$nama_calon = $this->input->post('exampleRadios');
+		$this->m_calon->addVote($nama_calon);
+		$this->m_mahasiswa->set_telah_memilih($nim);
+	}
 }
