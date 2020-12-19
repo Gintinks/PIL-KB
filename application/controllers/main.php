@@ -44,8 +44,8 @@ class Main extends CI_Controller{
 		$this->load->model('m_mahasiswa');
 		$this->load->model('m_calon');
 		$nim = $this->session->userdata('NIM');
-		$nama_calon = $this->input->post('exampleRadios');
-		$this->m_calon->addVote($nama_calon);
-		$this->m_mahasiswa->set_telah_memilih($nim);
+		$ID_ketua = $this->input->post('exampleRadios');
+		$this->m_calon->addVote($ID_ketua);
+		$this->m_mahasiswa->set_telah_memilih($nim,$ID_ketua);
 	}
 }

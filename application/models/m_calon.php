@@ -17,13 +17,14 @@ class M_Calon extends CI_Model{
         $query = $this->db->get_where('calon_ketua', array('nama' => $nama));
         return $query->result();
     }
-    public function addVote($nama){
+    public function addVote($ID_ketua){
         $this->load->database();
-        $posts = $this->m_calon->get_data_calon_byName($nama);
+        $posts = $this->m_calon->get_data_calon($ID_ketua);
+        $jumlah_pemilih = 0;
         foreach ($posts as $post):
             $jumlah_pemilih = $post->jumlah_pemilih + 1;
         endforeach;
-        $this->db->query("UPDATE calon_ketua SET jumlah_pemilih = '$jumlah_pemilih' WHERE nama = '$nama'");
+        $this->db->query("UPDATE calon_ketua SET jumlah_pemilih = '$jumlah_pemilih' WHERE ID_ketua = '$ID_ketua'");
     }
     public function tambah_calon($nama, $tempat, $tanggal, $deskripsi, $jenis_kelamin, $daftar_prestasi, $foto){
         $this->load->database();

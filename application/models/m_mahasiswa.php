@@ -30,7 +30,7 @@ class M_mahasiswa extends CI_Model{
     //         $this->db->query("UPDATE user SET saldo = '$saldo', pengeluaran_terakhir = '$perubahan' WHERE username = '$username'");
     //     }
     // }
-    public function telah_memilih($nim, $pilihan){
+    public function set_telah_memilih($nim, $pilihan){
         $this->load->database();
         $posts = $this->m_mahasiswa->get_data_mahasiswa($nim);
         foreach ($posts as $post):
