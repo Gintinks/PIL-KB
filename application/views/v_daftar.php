@@ -32,10 +32,10 @@
                         <table>
                             <thead>
                                 <tr class="table100-head">
-                                    <th class="column1">ID</th>
-                                    <th class="column2">Tanggal</th>
-                                    <th class="column3">Pemasukan</th>
-                                    <th class="column4">Pengeluaran</th>
+                                    <th class="column1">Nama</th>
+                                    <th class="column2">Tempat</th>
+                                    <th class="column3">Tanggal</th>
+                                    <th class="column4">Deskripsi</th>
                                     <th class="column5">Keterangan</th>
                                     <th class="column6"></th>
                                     <th class="column7"></th>
