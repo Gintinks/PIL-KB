@@ -30,10 +30,10 @@
 								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Pilih KB</a>
+								<a class="nav-link" href="main/pilih_kb">Pilih KB</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Kritik dan Saran</a>
+								<a class="nav-link" href="kritik">Kritik dan Saran</a>
 							</li>
 
 						</ul>

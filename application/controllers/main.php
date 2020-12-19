@@ -29,4 +29,14 @@ class Main extends CI_Controller{
 		 	$this->load->view('home_pemilihan',$data);
 		// }
 	}
+	function pemilihan(){
+		$this->load->helper('url');
+		$this->load->model('m_mahasiswa');
+		$this->load->model('m_calon');
+		$posts = $this->m_mahasiswa->get_data_mahasiswa($this->session->userdata('NIM'));
+		$posts2 = $this->m_calon->get_data();
+		$data['posts'] = $posts;
+		$data['posts2'] = $posts2;
+		$this->load->view('pilih_kb',$data);
+	}
 }
