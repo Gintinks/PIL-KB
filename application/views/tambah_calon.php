@@ -85,7 +85,7 @@
                                 <label>Pilih jenis kelamin</label>
                                 <select class="form-control" name="gender">
                                     <option>Laki-laki</option>
-                                    <option>Perempuan</option>
+                                    <option>Aerempuan</option>
                                 </select>
                             </div>
 

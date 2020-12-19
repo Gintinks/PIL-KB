@@ -300,13 +300,13 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pilih KB</a>
+                                <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Kritik dan Saran</a>
+                                <a class="nav-link" href="navbar/kritik_saran_admin">Kritik dan Saran</a>
                             </li>
 
                         </ul>
