@@ -126,7 +126,7 @@
 					margin: auto;
                     text-align: center;">
 									<div class="gallery">
-										<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['foto']); ?>" alt="John" style="width:100%">
+										<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post->foto); ?>" alt="John" style="width:100%">
 									</div>
 									<h1><?php echo $post->nama; ?></h1>
 									<p class="titlecard">
@@ -151,7 +151,7 @@
 
 											<div id="collapse<?php echo $i; ?>" class="collapse <?php if ($i == 1) echo 'show'; ?>" aria-labelledby="heading<?php echo $i; ?>" data-parent="#accordionExample">
 												<div class="card-body">
-													<?phpecho $post->deskripsi; ?>
+													<?php echo $post->deskripsi; ?>
 												</div>
 											</div>
 										</div>

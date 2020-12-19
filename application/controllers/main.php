@@ -26,7 +26,7 @@ class Main extends CI_Controller{
 		//  if (date_diff($posts3['end_time'], getDate()) > 0 ){
 		//  	$this->load->view('');
 		//  } else {
-		 	$this->load->view('home_pemilihan');
+		 	$this->load->view('home_pemilihan',$data);
 		// }
 	}
 }
