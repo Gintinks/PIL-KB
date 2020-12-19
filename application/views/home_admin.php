@@ -290,9 +290,7 @@
 <body>
 
 
-
-    <div class="container-fluid">
-        <div class="row">
+<div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top navbar-dark bg-dark">
 
@@ -319,26 +317,28 @@
                 </nav>
             </div>
         </div>
+    <div class="container-fluid" style="background-color: gray;">
+        
 
         <div class="row" style="padding-top:50px;"></div>
 
-        <div class="row" style="border: 5px solid #999;margin-left: 10px; ;margin-right: 10px;">
+        <div class="row" style="border: 5px solid #999;margin-left: 10px; ;margin-right: 10px; background-color: #4DE1FF;">
             <div class="col-sm-12">
                 <div class="page-header" style="padding-bottom:30px;">
                     <form action="createUser.php" method="post">
                         <br>
-                        <h1 class="specialHead">Set Waktu Awal Pemilihan</h1>
+                        <h1 class="specialHead" style="color:black">Set Waktu Awal Pemilihan</h1>
 
                         <div class="form-group">
                             <input class="form-control" type="date" name="tanggalAwal" required>
                         </div>
-                        <h1 class="specialHead">Set Waktu Akhir Pemilihan</h1>
+                        <h1 class="specialHead" style="color:black">Set Waktu Akhir Pemilihan</h1>
                         <div class="form-group">
                             <input class="form-control" type="date" name="tanggalAkhir" required>
                         </div>
-
-                        <p><strong>Current Time : <span id="time"></span>
-                                <span id="day"></span></strong></p>
+                        <h1 style="color:black"><p><strong>Current Time : <span id="time"></span>
+                                <span id="day"></span></strong></p></h1>
+                        
 
                         <br>
                         <a href="#" class="btn btn-info"> <strong>Set Waktu</strong></a>
@@ -391,6 +391,7 @@
 
             </div>
         </div>
+        <div class="row" style="padding-top:50px;"></div>
     </div>
 
 
