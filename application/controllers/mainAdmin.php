@@ -39,10 +39,9 @@ class MainAdmin extends CI_Controller{
 		$this->m_calon->tambah_calon($nama, $tempat, $tanggal, $deskripsi, $gender, $daftar_prestasi, $foto);
 		redirect(base_url("mainAdmin"));
 	}
-	function delete($ID_ketua){
+	function delete(){
 		$this->load->model('m_calon');
-
-		
+		$ID_ketua = $this->request->getPost('ID_ketua');
         $this->m_calon->delete($ID_ketua);
         redirect(base_url('mainAdmin'));
 	}
