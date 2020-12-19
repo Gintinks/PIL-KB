@@ -16,8 +16,9 @@ class MainAdmin extends CI_Controller{
 		$this->load->model('m_calon');
 	//	$posts2 = $this->m_calon->get_data_calon();
 		$posts = $this->m_admin->get_data_admin($this->session->userdata('username'));
+		$posts2 = $this->m_calon->get_data();
 		$data['posts'] = $posts;
-	//	$data['posts2'] = $posts2;
+		$data['posts2']	= $posts2;
 		$this->load->view('home_admin', $data);
 	}
 
