@@ -379,16 +379,16 @@
                     <tbody>
                         <?php foreach ($posts2 as $post) : ?>
                             <tr>
-                                <td<?php echo $post->ID_Ketua; ?></td>
-                                <td<?php echo $post->nama; ?></td>
+                                <td> <?php echo $post->ID_ketua; ?></td>
+                                <td> <?php echo $post->nama; ?></td>
                                 <td>
                                     <p>
                                         <?php echo $post->tempat; ?>, <?php echo $post->tanggal; ?></p>
                                     <p>
                                 </td>
-                                <td<?php echo $post->jenis_kelamin; ?></td>
-                                <td<?php echo $post->jumlah_pemilih; ?></td>
-                                <td<a href="<?php echo base_url('daftar/delete/' . $post->idTransaksi); ?>">Hapus</a></td>
+                                <td> <?php echo $post->jenis_kelamin; ?></td>
+                                <td> <?php echo $post->jumlah_pemilih; ?></td>
+                                <td> <a href="<?php echo base_url('daftar/delete/'); ?>">Hapus</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
