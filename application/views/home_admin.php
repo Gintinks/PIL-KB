@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Country Road, Take me Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <style>
@@ -388,7 +389,11 @@
                                 </td>
                                 <td> <?php echo $post->jenis_kelamin; ?></td>
                                 <td> <?php echo $post->jumlah_pemilih; ?></td>
-                                <td>  <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $post->ID_ketua; ?>">Delete</a></td>
+                                <td>
+                                    <form action="mainAdmin/delete" method="post">
+                                        <button name="ID_ketua" class="delete" value="<?php echo $post->ID_ketua; ?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+                                    </form>
+                                    
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -398,64 +403,14 @@
         </div>
         <div class="row" style="padding-top:50px;"></div>
     </div>
-    <!-- Modal Delete Product-->
-    <form action="/mainAdmin/delete" method="post">
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-             
-               <h4>Are you sure want to delete this product?</h4>
-             
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" name="ID_ketua" class="ID_ketua">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="submit" class="btn btn-primary">Yes</button>
-            </div>
-            </div>
-        </div>
-        </div>
-    </form>
-    <!-- End Modal Delete Product-->
 
-    <script>
-    $(document).ready(function(){
- 
-        // get Edit Product
-        $('.btn-edit').on('click',function(){
-            // get data from button edit
-            const id = $(this).data('id');
-            const name = $(this).data('name');
-            const price = $(this).data('price');
-            const category = $(this).data('category_id');
-            // Set data to Form Edit
-            $('.product_id').val(id);
-            $('.product_name').val(name);
-            $('.product_price').val(price);
-            $('.product_category').val(category).trigger('change');
-            // Call Modal Edit
-            $('#editModal').modal('show');
-        });
- 
-        // get Delete Product
-        $('.btn-delete').on('click',function(){
-            // get data from button edit
-            const id = $(this).data('id');
-            // Set data to Form Edit
-            $('.ID_ketua').val(id);
-            // Call Modal Edit
-            $('#deleteModal').modal('show');
-        });
-         
-    });
-</script>
+
+
+
+    <div class="row" style="padding-top:50px;"></div>
+
+
+
     <script>
         function time() {
             var date = new Date();
@@ -479,10 +434,6 @@
             $('#dtpickerdemo').datetimepicker();
         });
     </script>
-    <div class="row" style="padding-top:50px;"></div>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
