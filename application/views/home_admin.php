@@ -388,7 +388,7 @@
                                 </td>
                                 <td> <?php echo $post->jenis_kelamin; ?></td>
                                 <td> <?php echo $post->jumlah_pemilih; ?></td>
-                                <td> <a href="#deleteUser" class="delete" data-val=<?php echo $post->ID_ketua; ?> data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
+                                <td>  <a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $post->ID_ketua; ?>">Delete</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -398,35 +398,64 @@
         </div>
         <div class="row" style="padding-top:50px;"></div>
     </div>
-    <!-- Delete Modal HTML -->
-    <div id="deleteUser" class="modal fade">
-        <div class="modal-dialog">
+    <!-- Modal Delete Product-->
+    <form action="/mainAdmin/delete" method="post">
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form href=<?php echo base_url('mainAdmin/delete').$post->ID_ketua; ?> method="POST">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Delete Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" name="ID_ketua" id="ID_ketua" class="ID_ketua">
-                        <p>Are you sure you want to delete these Records?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-danger deletebtn" value="Delete">
-                    </div>
-                </form>
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+             
+               <h4>Are you sure want to delete this product?</h4>
+             
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="ID_ketua" class="ID_ketua">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
             </div>
         </div>
-    </div>
+        </div>
+    </form>
+    <!-- End Modal Delete Product-->
 
     <script>
-        $('#deleteUser').on('show.bs.modal', function(e) {
-            var test = $(e.relatedTarget).attr('data-val');
-            return $(this).find('.ID_ketua').val(test);
+    $(document).ready(function(){
+ 
+        // get Edit Product
+        $('.btn-edit').on('click',function(){
+            // get data from button edit
+            const id = $(this).data('id');
+            const name = $(this).data('name');
+            const price = $(this).data('price');
+            const category = $(this).data('category_id');
+            // Set data to Form Edit
+            $('.product_id').val(id);
+            $('.product_name').val(name);
+            $('.product_price').val(price);
+            $('.product_category').val(category).trigger('change');
+            // Call Modal Edit
+            $('#editModal').modal('show');
         });
-    </script>
+ 
+        // get Delete Product
+        $('.btn-delete').on('click',function(){
+            // get data from button edit
+            const id = $(this).data('id');
+            // Set data to Form Edit
+            $('.ID_ketua').val(id);
+            // Call Modal Edit
+            $('#deleteModal').modal('show');
+        });
+         
+    });
+</script>
     <script>
         function time() {
             var date = new Date();
