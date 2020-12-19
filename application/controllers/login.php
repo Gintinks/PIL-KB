@@ -26,7 +26,6 @@ class Login extends CI_Controller
 		);
 		$cek = $this->m_login->cek_login("mahasiswa", $where)->num_rows();
 		if ($cek > 0) {
-
 			$data_session = array(
 				'NIM' => $nim,
 				'status' => "login"

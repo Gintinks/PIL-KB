@@ -14,11 +14,14 @@ class MainAdmin extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->model('m_admin');
 		$this->load->model('m_calon');
+		$this->load->model('m_mahasiswa');
 	//	$posts2 = $this->m_calon->get_data_calon();
 		$posts = $this->m_admin->get_data_admin($this->session->userdata('username'));
 		$posts2 = $this->m_calon->get_data();
+		$posts3 = $this->m_mahasiswa->get_data_unverified();
 		$data['posts'] = $posts;
 		$data['posts2']	= $posts2;
+		$data['posts3'] = $posts3;
 		$this->load->view('home_admin', $data);
 	}
 	
@@ -45,4 +48,5 @@ class MainAdmin extends CI_Controller{
         $this->m_calon->delete($ID_ketua);
         redirect(base_url('mainAdmin'));
 	}
+
 }

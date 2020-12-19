@@ -14,14 +14,15 @@ class Main extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->model('m_mahasiswa');
 		$posts = $this->m_mahasiswa->get_data_mahasiswa($this->session->userdata('NIM'));
-//		$posts2 = $this->m_transaksi->get_pemasukan_terakhir($this->session->userdata('nama'));
-//		$posts3 = $this->m_transaksi->get_pengeluaran_terakhir($this->session->userdata('nama'));
+		$posts2 = $this->m_calon->get_data();
+		$posts3 = $this->m_pemilihan->get_data_pemilihan(2020);
 		$data['posts'] = $posts;
-//		$data['posts2'] = $posts2;
-//		$data['posts3'] = $posts3;
-//		$this->load->view('header', $data);
-//		$this->load->view('sidebar', $data);
-		$this->load->view('home_pemilihan', $data);
-	//	$this->load->view('footer', $data);
+		$data['posts2'] = $posts2;
+		$data['posts3'] = $posts3;
+		if (date_diff($posts3['end_time'], getDate()) > 0 ){
+			$this->load->view('');
+		} else {
+			$this->load->view('home_pemilihan');
+		}
 	}
 }
