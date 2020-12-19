@@ -13,7 +13,7 @@ class Kritik extends CI_Controller{
 	function index(){
 		$this->load->helper('url');
 		$this->load->model('m_kritik');
-		$posts = $this->m_mahasiswa->get_kritik();
+		$posts = $this->m_kritik->get_kritik();
 
 		$data['posts'] = $posts;
 
