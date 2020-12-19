@@ -290,35 +290,35 @@
 <body>
 
 
-<div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light static-top navbar-dark bg-dark">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light static-top navbar-dark bg-dark">
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> <a class="navbar-brand" href="#">PIL-KB</a>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="navbar/kritik_saran_admin">Kritik dan Saran</a>
-                            </li>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button> <a class="navbar-brand" href="#">PIL-KB</a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="navbar/kritik_saran_admin">Kritik dan Saran</a>
+                        </li>
 
-                        </ul>
+                    </ul>
 
 
-                    </div>
+                </div>
 
-                </nav>
-            </div>
+            </nav>
         </div>
+    </div>
     <div class="container-fluid" style="background-color: gray;">
-        
+
 
         <div class="row" style="padding-top:50px;"></div>
 
@@ -336,9 +336,11 @@
                         <div class="form-group">
                             <input class="form-control" type="date" name="tanggalAkhir" required>
                         </div>
-                        <h1 style="color:black"><p><strong>Current Time : <span id="time"></span>
-                                <span id="day"></span></strong></p></h1>
-                        
+                        <h1 style="color:black">
+                            <p><strong>Current Time : <span id="time"></span>
+                                    <span id="day"></span></strong></p>
+                        </h1>
+
 
                         <br>
                         <a href="#" class="btn btn-info"> <strong>Set Waktu</strong></a>
@@ -365,25 +367,28 @@
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
-                        <tr class="table100-head">
-                            <th class="column1">ID</th>
-                            <th class="column2">Tanggal</th>
-                            <th class="column3">Pemasukan</th>
-                            <th class="column4">Pengeluaran</th>
-                            <th class="column5">Keterangan</th>
-                            <th class="column6"></th>
-                            <th class="column7"></th>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>TTL</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Jumlah Pemilih</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($posts2 as $post) : ?>
                             <tr>
-                                <td class="column1"><?php echo $post->idTransaksi; ?></td>
-                                <td class="column2"><?php echo $post->Date; ?></td>
-                                <td class="column3"><?php echo $post->pemasukan; ?></td>
-                                <td class="column4"><?php echo $post->pengeluaran; ?></td>
-                                <td class="column5"><?php echo $post->Keterangan; ?></td>
-                                <td class="column6"><a href="<?php echo base_url('daftar/delete/'.$post->idTransaksi); ?>">Hapus</a></td>       
+                                <td<?php echo $post->ID_Ketua; ?></td>
+                                <td<?php echo $post->nama; ?></td>
+                                <td>
+                                    <p>
+                                        <?php echo $post->tempat; ?>, <?php echo $post->tanggal; ?></p>
+                                    <p>
+                                </td>
+                                <td<?php echo $post->jenis_kelamin; ?></td>
+                                <td<?php echo $post->jumlah_pemilih; ?></td>
+                                <td<a href="<?php echo base_url('daftar/delete/' . $post->idTransaksi); ?>">Hapus</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
