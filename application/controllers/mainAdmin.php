@@ -21,6 +21,7 @@ class MainAdmin extends CI_Controller{
 		$data['posts2']	= $posts2;
 		$this->load->view('home_admin', $data);
 	}
+	
 
 	function tambah_calon(){
 		$this->load->view('tambah_calon');

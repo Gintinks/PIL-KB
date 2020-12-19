@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Country Road, Take me Home</title>
+	<title>PIL-KB Home</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -119,153 +119,65 @@
 					}, 1000);
 				</script>
 				<div class="row" style="padding-top:50px;">
-					
 				</div>
-				<div class="row">
-					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				<div class="row col-12">
+        <?php
+        $i = 1;
+        while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+            <div class="col-md-4" style="padding-bottom: 30px;">
+                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 					max-width: 300px;
 					margin: auto;
-					text-align: center;">
-						<img src="2b Shrug.jpg" alt="John" style="width:100%">
-						<h1>John Doe</h1>
-						<p class="titlecard">
-							CEO & Founder, Example</p>
-						<p class="titlecard">
-							TTL</p>
-						<p class="titlecard">
-							Jenis klamin</p>
+                    text-align: center;">
+                    <div class="gallery">
+                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['foto']); ?>" alt="John" style="width:100%">
+                    </div>
+                    <h1><?php echo $row['nama']; ?></h1>
+                    <p class="titlecard">
+                        Tempat dan tgl Lahir : <?php echo $row['tempat']; ?>, <?php echo $row['tanggal']; ?></p>
+                    <p class="titlecard">
+                        <?php echo $row['jenis_kelamin']; ?></p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link <?php if ($i > 1) echo "collapsed"; ?>" type="button" data-toggle="collapse" data-target="#collapse<?php echo $i; ?>" aria-expanded="<?php echo ($i == 1) ? 'true' : 'false'; ?>" aria-controls="collapse<?php echo $i; ?>">
+                                        Deskripsi
+                                    </button>
+                                </h5>
+                            </div>
 
-						<div id="accordion">
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Ntar deskripsi, mimpi, dan harapan disini
-										</button>
-									</h5>
-								</div>
+                            <div id="collapse<?php echo $i; ?>" class="collapse <?php if ($i == 1) echo 'show'; ?>" aria-labelledby="heading<?php echo $i; ?>" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php echo $row['deskripsi']; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link <?php if ($i > 1) echo "collapsed"; ?>" type="button" data-toggle="collapse" data-target="#collapseB<?php echo $i; ?>" aria-expanded="<?php echo ($i == 1) ? 'true' : 'false'; ?>" aria-controls="collapseB<?php echo $i; ?>">
+                                        Prestasi
+                                    </button>
+                                </h5>
+                            </div>
 
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya deskripsi database
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Trus yang ini prestasi
-										</button>
-									</h5>
-								</div>
-
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya prestasi
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-					max-width: 300px;
-					margin: auto;
-					text-align: center;">
-						<img src="Mylife.png" alt="John" style="width:100%">
-						<h1>Lyle Walt</h1>
-						<p class="titlecard">
-							CEO & Founder, Example</p>
-						<p class="titlecard">
-							TTL</p>
-						<p class="titlecard">
-							Jenis klamin</p>
-
-						<div id="accordion">
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Ntar deskripsi, mimpi, dan harapan disini
-										</button>
-									</h5>
-								</div>
-
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya deskripsi database
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Trus yang ini prestasi
-										</button>
-									</h5>
-								</div>
-
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya prestasi
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-						max-width: 300px;
-						margin: auto;
-						text-align: center;">
-						<img src="happywolf.png" alt="John" style="width:100%">
-						<h1>Lawrence</h1>
-						<p class="titlecard">
-							CEO & Founder, Example</p>
-						<p class="titlecard">
-							TTL</p>
-						<p class="titlecard">
-							Jenis klamin</p>
-						<div id="accordion">
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Ntar deskripsi, mimpi, dan harapan disini
-										</button>
-									</h5>
-								</div>
-
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya deskripsi database
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-header" id="headingOne">
-									<h5 class="mb-0">
-										<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Trus yang ini prestasi
-										</button>
-									</h5>
-								</div>
-
-								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body">
-										ntar ini isinya prestasi
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
+                            <div id="collapseB<?php echo $i; ?>" class="collapse <?php if ($i == 1) echo 'show'; ?>" aria-labelledby="headingB<?php echo $i; ?>" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php echo $row['daftar_prestasi']; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <?php
+            $i++;
+        }
+        ?>
+    </div>
 
 
 				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
