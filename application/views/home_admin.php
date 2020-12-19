@@ -388,7 +388,7 @@
                                 </td>
                                 <td> <?php echo $post->jenis_kelamin; ?></td>
                                 <td> <?php echo $post->jumlah_pemilih; ?></td>
-                                <td> <a href="<?php echo base_url('daftar/delete/'); ?>">Hapus</a></td>
+                                <td> <a href="#deleteUser" class="delete" data-val=<?php echo $post->ID_ketua; ?> data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -398,8 +398,35 @@
         </div>
         <div class="row" style="padding-top:50px;"></div>
     </div>
+    <!-- Delete Modal HTML -->
+    <div id="deleteUser" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form href=<?php echo base_url('mainAdmin/delete').$post->ID_ketua; ?> method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="ID_ketua" id="ID_ketua" class="ID_ketua">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-danger deletebtn" value="Delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-
+    <script>
+        $('#deleteUser').on('show.bs.modal', function(e) {
+            var test = $(e.relatedTarget).attr('data-val');
+            return $(this).find('.ID_ketua').val(test);
+        });
+    </script>
     <script>
         function time() {
             var date = new Date();
