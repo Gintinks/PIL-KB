@@ -54,36 +54,19 @@
             <div class="col-sm-12">
                 <div class="page-header" style="padding-bottom:30px;">
                     <form action="<?php echo base_url("main/vote"); ?>" method="post">
-                        <br>
-                        <h1 class="specialHead" style="color:black">Pilih Calon Ketua Yang Ingin Anda Pilih</h1>
-                        <div class="col-sm-12" style="border: 1px solid;">
-                            <?php $i = 1 ?>
-                            <?php foreach ($posts2 as $post) : ?>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios<?php echo $i; ?>" value="<?php echo $post->ID_ketua; ?>" checked style="transform: scale(1.5);margin-top: 25px;">
-                                    <label class="form-check-label" for="exampleRadios<?php echo $i; ?>" style="font-size: 40px">
-                                        <?php echo $post->nama; ?>
-                                    </label>
-                                </div>
-
-                            <?php
-                                $i++;
-                            endforeach;
-                            ?>
+                        <div class="form-group">
+                            <label>Pilih Calon</label>
+                            <select class="form-control" name="ID_ketua">
+                                <?php foreach ($posts2 as $post) : ?>
+                                        <option>
+                                        <td> <?php echo$post->ID_ketua; ?></td>
+                                        </option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
-                        <br>
-                        <a href="vote" class="btn btn-info"type="submit" name="submit"> <strong>Pilih Ketua</strong></a>
+                        <input type="submit" class="btn btn-primary" name="submit" value="Pilih">               
                     </form>
                 </div>
-                <?php
-                if (isset($_POST['submit'])) {
-                    if (!empty($_POST['exampleRadios'])) {
-                        echo '  ' . $_POST['exampleRadios'];
-                    } else {
-                        echo 'Please select the value.';
-                    }
-                }
-                ?>
 
             </div>
 

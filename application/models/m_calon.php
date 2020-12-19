@@ -2,9 +2,11 @@
 //tes
 class M_Calon extends CI_Model{
     public function get_data(){
-        $this->load->database();
-        $query = $this->db->get('calon_ketua');
-        return $query->result();
+
+         $this->load->database();
+         $query = $this->db->get('calon_ketua');
+         return $query->result();
+        //return $this->db->get('calon_ketua')-> result_array();
     }
 
     public function get_data_calon($ID_ketua){

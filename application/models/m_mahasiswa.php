@@ -32,11 +32,8 @@ class M_mahasiswa extends CI_Model{
     // }
     public function set_telah_memilih($nim, $pilihan){
         $this->load->database();
-        $posts = $this->m_mahasiswa->get_data_mahasiswa($nim);
-        foreach ($posts as $post):
-            $ID_ketua = $post->$pilihan;
-        endforeach;
-        $this->db->query("UPDATE mahasiswa SET ID_ketua = '$ID_ketua' WHERE NIM = '$nim'");
+       
+        $this->db->query("UPDATE mahasiswa SET ID_ketua = '$pilihan' WHERE NIM = '$nim'");
     }
 
    
