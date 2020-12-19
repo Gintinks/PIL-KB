@@ -365,44 +365,27 @@
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
-                        <tr>
-
-                            <th>ID</th>
-                            <th>Nama</th>
-                            <th>Tempat</th>
-                            <th>Tanggal</th>
-                            <th>Deskripsi</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Daftar Prestasi</th>
-                            <th>Jumlah Pemilih</th>
-                            <th>Delete</th>
-
+                        <tr class="table100-head">
+                            <th class="column1">ID</th>
+                            <th class="column2">Tanggal</th>
+                            <th class="column3">Pemasukan</th>
+                            <th class="column4">Pengeluaran</th>
+                            <th class="column5">Keterangan</th>
+                            <th class="column6"></th>
+                            <th class="column7"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        while ($user = mysqli_fetch_array($rs)) {
-                            if ($user['IDDriver'] == null) {
-                                echo
-                                    "<tr>
-                        
-                        <td>$user[ID]</td>
-                        <td>$user[nama]</td>
-                        <td>$user[travel]</td>
-                        <td>$user[email]</td>
-                        <td>$user[alamat]</td>
-                        <td>$user[waktu]</td>
-                        <td>$user[tanggal]</td>
-                        <td>$user[noTelp]</td>
-                        <td>
-                            <a href=\"#deleteUser\" class=\"delete\" data-val=$user[ID] data-toggle=\"modal\"><i class=\"material-icons\" data-toggle=\"tooltip\" title=\"Delete\">&#xE872;</i></a>
-                        </td>
-                        </tr>";
-                            }
-                        }
-                        ?>
-
-
+                        <?php foreach ($posts2 as $post) : ?>
+                            <tr>
+                                <td class="column1"><?php echo $post->idTransaksi; ?></td>
+                                <td class="column2"><?php echo $post->Date; ?></td>
+                                <td class="column3"><?php echo $post->pemasukan; ?></td>
+                                <td class="column4"><?php echo $post->pengeluaran; ?></td>
+                                <td class="column5"><?php echo $post->Keterangan; ?></td>
+                                <td class="column6"><a href="<?php echo base_url('daftar/delete/'.$post->idTransaksi); ?>">Hapus</a></td>       
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
 
