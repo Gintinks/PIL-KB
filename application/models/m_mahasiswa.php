@@ -5,7 +5,12 @@ class M_mahasiswa extends CI_Model{
         return $this->db->get('mahasiswa')-> result_array();
     }
     public function get_data_unverified(){
-        return $this->db->get('mahasiswa', array('verified' == 0));
+        $this->load->database();
+        $query = $this->db->get('mahasiswa', array('verified' == 0));
+        
+        $this->db->where('verified', 0);
+        $query = $this->db->get('mahasiswa');
+        return $query->result();
     }
     public function set_data_verified($nim){
         $this->load->database();
@@ -17,24 +22,14 @@ class M_mahasiswa extends CI_Model{
         return $query->result();
     }
 
-    // public function update_data_user($username, $perubahan){
-    //     $this->load->database();
-    //   //  $data =  $this->db->get_where('user', array('username' => $username));
-    //     $posts = $this->m_user->get_data_user($username);
-    //     foreach ($posts as $post): 
-    //         $saldo = $post->saldo + $perubahan;
-    //     endforeach;
-    //     if($perubahan > 0){
-    //         $this->db->query("UPDATE user SET saldo = '$saldo', pemasukan_terakhir = '$perubahan' WHERE username = '$username'");
-    //     }else{
-    //         $this->db->query("UPDATE user SET saldo = '$saldo', pengeluaran_terakhir = '$perubahan' WHERE username = '$username'");
-    //     }
-    // }
     public function set_telah_memilih($nim, $pilihan){
         $this->load->database();
        
         $this->db->query("UPDATE mahasiswa SET ID_ketua = '$pilihan' WHERE NIM = '$nim'");
     }
-
+    function delete_pilih($ID_ketua){
+        $this->load->database();
+        $this->db->query("UPDATE mahasiswa SET ID_ketua = null WHERE ID_ketua = '$ID_ketua'");
+    }
    
 }

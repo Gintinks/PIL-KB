@@ -44,9 +44,25 @@ class MainAdmin extends CI_Controller{
 	}
 	function delete(){
 		$this->load->model('m_calon');
+		$this->load->model('m_mahasiswa');
 		$ID_ketua = $this->input->post('ID_ketua');
+		$this->m_mahasiswa->delete_pilih($ID_ketua);
         $this->m_calon->delete($ID_ketua);
         redirect(base_url('MainAdmin'));
 	}
-
+	function set_waktu_pemilihan(){
+		$this->load->helper('url');
+		$this->load->model('m_pemilihan');
+		$start_time = $this->input->post('tanggalAwal');
+		$end_time = $this->input->post('tanggalAkhir');
+		$tahun = 2020;
+		$this->m_pemilihan->set_waktu_pemilihan($tahun, $start_time, $end_time);
+		redirect(base_url('MainAdmin'));
+	}
+	function verifikasi(){
+		$this->load->helper('url');
+		$this->load->model('m_mahasiswa');
+		$NIM = $this->input->post('NIM');
+		$this->m_mahasiswa->set_data_verified($NIM);
+	}
 }

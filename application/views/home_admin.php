@@ -299,6 +299,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> <a class="navbar-brand" href="#">PIL-KB</a>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<<<<<<< HEAD
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
@@ -311,6 +312,9 @@
                         </li>
 
                     </ul>
+=======
+                    
+>>>>>>> 17561ae05a525f591c0a368de532b0afc2fa8de6
 
 
                 </div>
@@ -326,7 +330,7 @@
         <div class="row" style="border: 5px solid #999;margin-left: 10px; ;margin-right: 10px; background-color: #4DE1FF;">
             <div class="col-sm-12">
                 <div class="page-header" style="padding-bottom:30px;">
-                    <form action="createUser.php" method="post">
+                    <form action=<?php echo base_url("Mainadmin/set_waktu_pemilihan"); ?> method="post">
                         <br>
                         <h1 class="specialHead" style="color:black">Set Waktu Awal Pemilihan</h1>
 
@@ -344,7 +348,7 @@
 
 
                         <br>
-                        <a href="#" class="btn btn-info"> <strong>Set Waktu</strong></a>
+                        <input type="submit" class="btn btn-info" name="submit" value="Set Waktu">
                     </form>
                 </div>
 
@@ -392,6 +396,45 @@
                                 <td>
                                     <form action="mainAdmin/delete" method="post">
                                         <button name="ID_ketua" class="delete" value="<?php echo $post->ID_ketua; ?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+                                    </form>
+                                    
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>List Mahasiswa register</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($posts3 as $post) : ?>
+                            <tr>
+                                <td> <?php echo $post->NIM; ?></td>
+                                <td> <?php echo $post->nama; ?></td>
+                                <td> <?php echo $post->email; ?></td>
+                                <td>
+                                    <form action="mainAdmin/verifikasi" method="post">
+                                        <button name="verifikasi" class="delete" value="<?php echo $post->NIM; ?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
                                     </form>
                                     
                             </tr>
