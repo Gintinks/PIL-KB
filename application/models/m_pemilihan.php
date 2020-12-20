@@ -1,6 +1,6 @@
 <?php
 
-class M_admin extends CI_Model{
+class M_Pemilihan extends CI_Model{
     public function get_data(){
         return $this->db->get('pemilihan')-> result_array();
     }

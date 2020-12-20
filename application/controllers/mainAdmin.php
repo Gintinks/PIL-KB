@@ -59,5 +59,10 @@ class MainAdmin extends CI_Controller{
 		$this->m_pemilihan->set_waktu_pemilihan($tahun, $start_time, $end_time);
 		redirect(base_url('MainAdmin'));
 	}
-
+	function verifikasi(){
+		$this->load->helper('url');
+		$this->load->model('m_mahasiswa');
+		$NIM = $this->input->post('NIM');
+		$this->m_mahasiswa->set_data_verified($NIM);
+	}
 }
