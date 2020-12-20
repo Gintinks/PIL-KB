@@ -47,6 +47,25 @@ class M_Calon extends CI_Model{
 		);
 		$this->db->insert('calon_ketua', $data);
     }
+    public function update_calon($id, $nama, $tempat, $tanggal, $deskripsi, $jenis_kelamin, $daftar_prestasi, $foto){
+        $this->load->database();
+        if($jenis_kelamin=="Laki-laki"){
+            $jenis_kelamin = 'L';
+        } else{
+            $jenis_kelamin = 'P';
+        }
+        $data = array(
+			'nama' => $nama,
+            'tempat' => $tempat,
+            'tanggal' => $tanggal,
+            'deskripsi' => $deskripsi,
+            'jenis_kelamin' => $jenis_kelamin,
+            'daftar_prestasi' => $daftar_prestasi,
+            'foto' => $foto,
+            'jumlah_pemilih' => 0
+        );
+        $this->db->table('calon_ketua')->update($data, array('ID_ketua' => $id));
+    }
     function delete($ID_ketua){
         $this->load->database();
         $this->db->delete('calon_ketua', array('ID_ketua' => $ID_ketua));

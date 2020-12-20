@@ -42,6 +42,27 @@ class MainAdmin extends CI_Controller{
 		$this->m_calon->tambah_calon($nama, $tempat, $tanggal, $deskripsi, $gender, $daftar_prestasi, $foto);
 		redirect(base_url("mainAdmin"));
 	}
+	function ubah_calon(){
+		$this->load->helper('url');
+		$this->load->model('m_calon');
+		$id = $this->input->post('ID_ketua');
+		$nama = $this->input->post('nama');
+		$tempat = $this->input->post('tempat');
+		$tanggal = $this->input->post('tanggal');
+		$deskripsi = $this->input->post('deskripsi');
+		$gender = $this->input->post('gender');
+		$daftar_prestasi = $this->input->post('daftar_prestasi');
+		$foto = $this->input->post('customFileInput');
+		$this->m_calon->update_calon($id,$nama, $tempat, $tanggal, $deskripsi, $gender, $daftar_prestasi, $foto);
+		redirect(base_url("mainAdmin"));
+	}
+	function update_calon(){
+		$this->load->helper('url');
+		$this->load->model('m_calon');
+		$posts2 = $this->m_calon->get_data_calon($this->input->post('ID_ketua'));
+		$data['posts'] = $posts2;
+		$this->load->view('edit_calon',$data);
+	}
 	function delete(){
 		$this->load->model('m_calon');
 		$this->load->model('m_mahasiswa');
