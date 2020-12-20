@@ -7,6 +7,9 @@ class M_mahasiswa extends CI_Model{
     public function get_data_unverified(){
         $this->load->database();
         $query = $this->db->get('mahasiswa', array('verified' == 0));
+        
+        $this->db->where('verified', 0);
+        $query = $this->db->get('mahasiswa');
         return $query->result();
     }
     public function set_data_verified($nim){
