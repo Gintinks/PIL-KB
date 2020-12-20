@@ -374,6 +374,7 @@
                             <th>TTL</th>
                             <th>Jenis Kelamin</th>
                             <th>Jumlah Pemilih</th>
+                            <th>Edit Data</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -390,10 +391,16 @@
                                 <td> <?php echo $post->jenis_kelamin; ?></td>
                                 <td> <?php echo $post->jumlah_pemilih; ?></td>
                                 <td>
+                                    <form action="mainAdmin/update_calon" method="post">
+                                        <button name="ID_ketua" class="edit" value="<?php echo $post->ID_ketua; ?>"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
+                                    </form>
+                                </td>
+                                <td>
                                     <form action="mainAdmin/delete" method="post">
                                         <button name="ID_ketua" class="delete" value="<?php echo $post->ID_ketua; ?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
                                     </form>
-                                    
+                                </td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -410,7 +417,7 @@
                             <h2>List Mahasiswa register</h2>
                         </div>
                         <div class="col-sm-6">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -433,7 +440,8 @@
                                     <form action="mainAdmin/verifikasi" method="post">
                                         <button name="verifikasi" class="delete" value="<?php echo $post->NIM; ?>"><i class="material-icons" data-toggle="tooltip" title="Verifikasi">&#xE254;</i></button>
                                     </form>
-                                    
+                                </td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
