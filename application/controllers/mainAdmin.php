@@ -62,7 +62,8 @@ class MainAdmin extends CI_Controller{
 	function verifikasi(){
 		$this->load->helper('url');
 		$this->load->model('m_mahasiswa');
-		$NIM = $this->input->post('NIM');
+		$NIM = $this->input->post('verifikasi');
 		$this->m_mahasiswa->set_data_verified($NIM);
+		redirect(base_url('MainAdmin'));
 	}
 }

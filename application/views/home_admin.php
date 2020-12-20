@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Country Road, Take me Home</title>
+    <title>Admin Home</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -299,7 +299,21 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> <a class="navbar-brand" href="#">PIL-KB</a>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kritik_admin">Kritik dan Saran</a>
+                        </li>
+
+                    </ul>
+
+
 
 
                 </div>
@@ -409,6 +423,7 @@
                             <th>NIM</th>
                             <th>Nama</th>
                             <th>Email</th>
+                            <th>Verifikasi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -419,7 +434,7 @@
                                 <td> <?php echo $post->email; ?></td>
                                 <td>
                                     <form action="mainAdmin/verifikasi" method="post">
-                                        <button name="verifikasi" class="delete" value="<?php echo $post->NIM; ?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+                                        <button name="verifikasi" class="delete" value="<?php echo $post->NIM; ?>"><i class="material-icons" data-toggle="tooltip" title="Verifikasi">&#xE254;</i></button>
                                     </form>
                                     
                             </tr>
