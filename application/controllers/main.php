@@ -24,13 +24,11 @@ class Main extends CI_Controller{
 		$data['posts2'] = $posts2;
 		$data['posts3'] = $posts3;
 		
-		foreach($posts3 as $post):
-			if($post->start_time > getDate()){
-				$this->load->view('home_waiting',$data);
-			} else if ($post->end_time > getDate()){
-				$this->load->view('home_hasil', $data);
+		foreach($posts as $post):
+			if ($post->sudah_milih == 0) {
+				$this->load->view('home_pemilihan', $data);
 			} else {
-				$this->load->view('home_pemilihan',$data);
+				$this->load->view('home_hasil',$data);
 			}
 		endforeach;
 		//  if (date_diff($posts3['end_time'], getDate()) > 0 ){
