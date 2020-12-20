@@ -326,7 +326,7 @@
         <div class="row" style="border: 5px solid #999;margin-left: 10px; ;margin-right: 10px; background-color: #4DE1FF;">
             <div class="col-sm-12">
                 <div class="page-header" style="padding-bottom:30px;">
-                    <form action="createUser.php" method="post">
+                    <form action=<?php echo base_url("Mainadmin/set_waktu_pemilihan"); ?> method="post">
                         <br>
                         <h1 class="specialHead" style="color:black">Set Waktu Awal Pemilihan</h1>
 
