@@ -1,13 +1,11 @@
 <?php 
 
-class Kritik extends CI_Controller{
+class Kritik_admin extends CI_Controller{
 
 	function __construct(){
 		parent::__construct();
 	
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
-		}
+		
 	}
 	//coba
 	function index(){
@@ -15,7 +13,7 @@ class Kritik extends CI_Controller{
 		$this->load->model('m_kritik');
 		$posts = $this->m_kritik->get_kritik();
 		$data['posts'] = $posts;
-		$this->load->view('kritik_mahasiswa', $data);
+		$this->load->view('kritik_admin', $data);
 	}
 
     function simpan_kritik(){

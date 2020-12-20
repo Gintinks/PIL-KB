@@ -307,7 +307,7 @@
                             <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="navbar/kritik_saran_admin">Kritik dan Saran</a>
+                            <a class="nav-link" href="kritik_admin">Kritik dan Saran</a>
                         </li>
 
                     </ul>

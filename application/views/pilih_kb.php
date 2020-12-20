@@ -57,9 +57,9 @@
                         <div class="form-group">
                             <label>Pilih Calon</label>
                             <select class="form-control" name="ID_ketua">
-                                <?php foreach ($posts2 as $post) : ?>
+                                <?php foreach ($posts as $post) : ?>
                                         <option>
-                                        <td> <?php echo$post->ID_ketua; ?></td>
+                                        <td> <?php echo $post->ID_ketua; ?></td>
                                         </option>
                                 <?php endforeach; ?>
                             </select>
@@ -77,30 +77,7 @@
     </div>
 
 
-    <script>
-        function time() {
-            var date = new Date();
-            var time = date.toLocaleTimeString();
-            var options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
-            var day = date.toLocaleDateString('en-US', options);
-            document.getElementById('time').innerHTML = time;
-            document.getElementById('day').innerHTML = day;
-        }
-        setInterval(function() {
-            time();
-        }, 1000);
-    </script>
-    <script type="text/javascript">
-        $(function() {
-            $('#dtpickerdemo').datetimepicker();
-        });
-    </script>
-    <div class="row" style="padding-top:50px;"></div>
+
 
 
 
