@@ -361,7 +361,6 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="logout.php" class="btn btn-danger"> <span>Logout</span></a>
-                            <a href="driverMenu.php" class="btn btn-success"> <span>Edit Calon KB</span></a>
                             <a href="mainAdmin/tambah_calon" class="btn btn-primary"> <span>Tambah Calon KB</span></a>
                         </div>
                     </div>
