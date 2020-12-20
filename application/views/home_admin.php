@@ -302,10 +302,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="navbar/pilih_kb">Pilih KB</a>
+                            <a class="nav-link" href="mainAdmin">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="kritik_admin">Kritik dan Saran</a>

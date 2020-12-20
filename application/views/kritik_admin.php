@@ -27,15 +27,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> <a class="navbar-brand" href="#">PIL-KB</a>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="navbar-nav">
+                <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="mainAdmin">Home </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pilih KB</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kritik dan Saran</a>
+                            <a class="nav-link" href="kritik_admin">Kritik dan Saran <span class="sr-only">(current)</span></a>
                         </li>
 
                     </ul>

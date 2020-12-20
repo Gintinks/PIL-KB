@@ -5,7 +5,9 @@ class Kritik_admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 	
-		
+		if($this->session->userdata('status') != "loginAdmin"){
+			redirect(base_url("adminLogin"));
+		}
 	}
 	//coba
 	function index(){
