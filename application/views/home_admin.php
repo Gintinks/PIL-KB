@@ -299,7 +299,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> <a class="navbar-brand" href="#">PIL-KB</a>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<<<<<<< HEAD
+
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="navbar/home">Home <span class="sr-only">(current)</span></a>
@@ -312,9 +312,8 @@
                         </li>
 
                     </ul>
-=======
-                    
->>>>>>> 17561ae05a525f591c0a368de532b0afc2fa8de6
+
+
 
 
                 </div>
