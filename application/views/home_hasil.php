@@ -85,12 +85,11 @@
 						<div class="page-header" style="padding-top:30px;padding-bottom:30px;">
 
 							<br>
-							<h1 class="specialHead">PILIH SEKARANG</h1>
+							<h1 class="specialHead">HASIL</h1>
 							<p><strong>Current Time : <span id="time"></span>
 									<span id="day"></span></strong></p>
 
 							<br>
-							<a href="#" class="btn btn-info"> <strong>Ayo Pilih</strong></a>
 						</div>
 					</div>
 				</div>
@@ -126,7 +125,8 @@
                     text-align: center;">
 									<div class="gallery">
 										<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post->foto); ?>" alt="John" style="width:100%">
-									</div>
+                                    </div>
+                                    <h1><?php echo $post->jumlah_pemilih; ?></h1>
 									<h1><?php echo $post->nama; ?></h1>
 									<p class="titlecard">
 										Tempat dan tgl Lahir : <?php echo $post->tempat; ?>, <?php echo $post->tanggal; ?></p>

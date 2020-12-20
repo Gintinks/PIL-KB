@@ -85,12 +85,14 @@
 						<div class="page-header" style="padding-top:30px;padding-bottom:30px;">
 
 							<br>
-							<h1 class="specialHead">PILIH SEKARANG</h1>
+                            <h1 class="specialHead">Waktu Pemilihan Akan Dibuka pada</h1>
+                            <?php foreach($posts3 as $post): ?>
+                            <p style="font-size:16px;"><?php echo $post->start_time; ?></p>
+                            <?php endforeach; ?>
 							<p><strong>Current Time : <span id="time"></span>
 									<span id="day"></span></strong></p>
 
 							<br>
-							<a href="#" class="btn btn-info"> <strong>Ayo Pilih</strong></a>
 						</div>
 					</div>
 				</div>
