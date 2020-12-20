@@ -86,8 +86,9 @@
 
 							<br>
                             <h1 class="specialHead">Waktu Pemilihan Akan Dibuka pada</h1>
-                            
-							<p style="font-size:16px;">10:00:00 AM Friday, December 13, 2020</p>
+                            <?php foreach($posts3 as $post): ?>
+                            <p style="font-size:16px;"><?php echo $post->start_time; ?></p>
+                            <?php endforeach; ?>
 							<p><strong>Current Time : <span id="time"></span>
 									<span id="day"></span></strong></p>
 

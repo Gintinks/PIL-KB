@@ -27,7 +27,7 @@ class Main extends CI_Controller{
 		foreach($posts3 as $post):
 			if($post->start_time > getDate()){
 				$this->load->view('home_waiting',$data);
-			} else if ($post->end_time < getDate()){
+			} else if ($post->end_time > getDate()){
 				$this->load->view('home_hasil', $data);
 			} else {
 				$this->load->view('home_pemilihan',$data);

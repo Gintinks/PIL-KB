@@ -85,8 +85,7 @@
 						<div class="page-header" style="padding-top:30px;padding-bottom:30px;">
 
 							<br>
-							<h1 class="specialHead">Waktu Pemilihan Akan Dibuka pada</h1>
-							<p style="font-size:16px;">10:00:00 AM Friday, December 13, 2020</p>
+							<h1 class="specialHead">PILIH SEKARANG</h1>
 							<p><strong>Current Time : <span id="time"></span>
 									<span id="day"></span></strong></p>
 
