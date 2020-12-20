@@ -14,19 +14,29 @@ class Main extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->model('m_mahasiswa');
 		$this->load->model('m_calon');
+		$this->load->model('m_pemilihan');
 		$posts = $this->m_mahasiswa->get_data_mahasiswa($this->session->userdata('NIM'));
 		$posts2 = $this->m_calon->get_data();
-	//	$posts3 = $this->m_pemilihan->get_data_pemilihan(2020);
+		$posts3 = $this->m_pemilihan->get_data_pemilihan(2020);
 	
 		
 		$data['posts'] = $posts;
 		$data['posts2'] = $posts2;
-	//	$data['posts3'] = $posts3;
-	
+		$data['posts3'] = $posts3;
+		
+		foreach($posts3 as $post):
+			if($post->start_time > getDate()){
+				$this->load->view('home_waiting',$data);
+			} else if ($post->end_time < getDate()){
+				$this->load->view('home_hasil', $data);
+			} else {
+				$this->load->view('home_pemilihan',$data);
+			}
+		endforeach;
 		//  if (date_diff($posts3['end_time'], getDate()) > 0 ){
 		//  	$this->load->view('');
 		//  } else {
-		 	$this->load->view('home_pemilihan',$data);
+		//$this->load->view('home_pemilihan',$data);
 		// }
 	}
 	function pemilihan(){
